@@ -1,4 +1,4 @@
-# SuiBase
+# SuiStack0X
 
 <div align="center">
   <h3>Unified Decentralized Infrastructure for Sui</h3>
@@ -10,7 +10,7 @@
 
 ## Overview
 
-SuiBase is a comprehensive decentralized infrastructure platform built on the Sui blockchain, leveraging Trusted Execution Environments (TEEs) to provide secure, private, and scalable services for web3 applications. It unifies computing, content delivery, data indexing, and deployment in a cohesive ecosystem.
+SuiStack0X is a comprehensive decentralized infrastructure platform built on the Sui blockchain, leveraging Trusted Execution Environments (TEEs) to provide secure, private, and scalable services for web3 applications. It unifies computing, content delivery, data indexing, and deployment in a cohesive ecosystem.
 
 **Key Features:**
 - 🔐 **TEE-Secured Infrastructure**: End-to-end privacy and verifiable computation
@@ -22,7 +22,7 @@ SuiBase is a comprehensive decentralized infrastructure platform built on the Su
 
 ## Architecture
 
-SuiBase provides four core modules within a unified architecture:
+SuiStack0X provides four core modules within a unified architecture:
 
 1. **Compute Module**: Serverless functions and application backends
 2. **Edge Module**: Content delivery and routing infrastructure
@@ -33,7 +33,7 @@ All modules operate within a common TEE security layer and shared node infrastru
 
 ```
 ┌───────────────────────────────────────────────────────────┐
-│                       SuiBase                            │
+│                       SuiStack0X                            │
 ├───────────────────────────────────────────────────────────┤
 │                    TEE Security Layer                     │
 ├───────────┬───────────────┬───────────────┬───────────────┤
@@ -57,38 +57,38 @@ All modules operate within a common TEE security layer and shared node infrastru
 
 ```bash
 # Install CLI
-npm install -g SuiBase-cli
+npm install -g SuiStack0X-cli
 
 # Install SDK
-npm install @SuiBase/sdk
+npm install @SuiStack0X/sdk
 ```
 
 ### Quick Start for Developers
 
 ```bash
 # Initialize a new project
-SuiBase init my-project
+SuiStack0X init my-project
 cd my-project
 
 # Configure your application
-SuiBase config
+SuiStack0X config
 
 # Deploy your application
-SuiBase deploy
+SuiStack0X deploy
 ```
 
 ### Quick Start for Node Operators
 
 ```bash
 # Install node software
-npm install -g SuiBase-node
+npm install -g SuiStack0X-node
 
 # Initialize node with TEE attestation
-SuiBase-node init --tee-platform intel-sgx
+SuiStack0X-node init --tee-platform intel-sgx
 
 # Stake tokens and start node
-SuiBase-node stake --amount 5000
-SuiBase-node start
+SuiStack0X-node stake --amount 5000
+SuiStack0X-node start
 ```
 
 ## Modules
@@ -99,7 +99,7 @@ The Compute Module provides serverless computing capabilities with TEE-based pri
 
 ```javascript
 // Example: Deploying a serverless function
-import { ComputeClient } from '@SuiBase/sdk';
+import { ComputeClient } from '@SuiStack0X/sdk';
 
 const compute = new ComputeClient({
   network: 'testnet',
@@ -129,7 +129,7 @@ The Edge Module handles content delivery with NGINX-like configuration:
 
 ```javascript
 // Example: Configuring edge delivery
-import { EdgeClient } from '@SuiBase/sdk';
+import { EdgeClient } from '@SuiStack0X/sdk';
 
 const edge = new EdgeClient({
   network: 'testnet',
@@ -174,7 +174,7 @@ The Index Module provides blockchain data indexing and querying capabilities:
 
 ```javascript
 // Example: Creating an index
-import { IndexClient } from '@SuiBase/sdk';
+import { IndexClient } from '@SuiStack0X/sdk';
 
 const index = new IndexClient({
   network: 'testnet',
@@ -215,7 +215,7 @@ The Deploy Module manages CI/CD pipelines and deployments:
 
 ```javascript
 // Example: Setting up a deployment pipeline
-import { DeployClient } from '@SuiBase/sdk';
+import { DeployClient } from '@SuiStack0X/sdk';
 
 const deploy = new DeployClient({
   network: 'testnet',
@@ -261,11 +261,11 @@ await deploy.createPipeline({
 
 ## Smart Contract Architecture
 
-SuiBase is powered by a suite of Move smart contracts:
+SuiStack0X is powered by a suite of Move smart contracts:
 
 ```move
-module SuiBase::core {
-    // Core registry for all SuiBase components
+module SuiStack0X::core {
+    // Core registry for all SuiStack0X components
     struct Registry has key {
         id: UID,
         nodes: Table<address, NodeInfo>,
@@ -332,7 +332,7 @@ module SuiBase::core {
 Each module has its own specialized contracts that interface with the core:
 
 ```move
-module SuiBase::compute {
+module SuiStack0X::compute {
     // Function registry
     struct ComputeRegistry has store {
         functions: Table<ID, FunctionInfo>,
@@ -366,7 +366,7 @@ module SuiBase::compute {
 
 ## TEE Security Model
 
-SuiBase leverages Trusted Execution Environments to provide:
+SuiStack0X leverages Trusted Execution Environments to provide:
 
 1. **Verifiable Computation**: Guarantee that code executes exactly as specified
 2. **Data Privacy**: Encrypted data remains protected even during processing
@@ -389,7 +389,7 @@ SuiBase leverages Trusted Execution Environments to provide:
 
 ## Economic Model
 
-SuiBase operates on a unified economic model with flexible resource allocation:
+SuiStack0X operates on a unified economic model with flexible resource allocation:
 
 ### Staking Mechanism
 
@@ -425,7 +425,7 @@ Rewards are distributed based on:
 
 ## Governance
 
-SuiBase is governed through a decentralized governance system:
+SuiStack0X is governed through a decentralized governance system:
 
 1. **Improvement Proposals**: Community-submitted proposals for upgrades
 2. **Voting**: Stake-weighted voting on proposals
@@ -465,7 +465,7 @@ SuiBase is governed through a decentralized governance system:
 
 ## Integration with Sui Ecosystem
 
-SuiBase integrates seamlessly with the broader Sui ecosystem:
+SuiStack0X integrates seamlessly with the broader Sui ecosystem:
 
 - **Sui Aether**: Leverages Proof of Uncorruption for enhanced security
 - **Walrus**: Native storage integration for content and artifacts
@@ -515,33 +515,33 @@ SuiBase integrates seamlessly with the broader Sui ecosystem:
 ## Getting Involved
 
 ### For Developers
-- [Documentation](https://docs.SuiBase.io)
-- [Quickstart Guide](https://docs.SuiBase.io/quickstart)
-- [SDK Reference](https://docs.SuiBase.io/sdk)
-- [Examples Repository](https://github.com/SuiBase/examples)
+- [Documentation](https://docs.SuiStack0X.io)
+- [Quickstart Guide](https://docs.SuiStack0X.io/quickstart)
+- [SDK Reference](https://docs.SuiStack0X.io/sdk)
+- [Examples Repository](https://github.com/SuiStack0X/examples)
 
 ### For Node Operators
-- [Node Requirements](https://docs.SuiBase.io/node/requirements)
-- [Setup Guide](https://docs.SuiBase.io/node/setup)
-- [Economics Calculator](https://calculator.SuiBase.io)
-- [Monitoring Tools](https://github.com/SuiBase/monitoring)
+- [Node Requirements](https://docs.SuiStack0X.io/node/requirements)
+- [Setup Guide](https://docs.SuiStack0X.io/node/setup)
+- [Economics Calculator](https://calculator.SuiStack0X.io)
+- [Monitoring Tools](https://github.com/SuiStack0X/monitoring)
 
 ### For Contributors
 - [Contribution Guidelines](CONTRIBUTING.md)
-- [Development Setup](https://docs.SuiBase.io/contributing/setup)
-- [RFC Process](https://docs.SuiBase.io/contributing/rfcs)
-- [Good First Issues](https://github.com/SuiBase/SuiBase/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+- [Development Setup](https://docs.SuiStack0X.io/contributing/setup)
+- [RFC Process](https://docs.SuiStack0X.io/contributing/rfcs)
+- [Good First Issues](https://github.com/SuiStack0X/SuiStack0X/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 
 ## Developer Experience
 
-SuiBase prioritizes developer experience with:
+SuiStack0X prioritizes developer experience with:
 
 ```typescript
 // Example: Complete application deployment
-import { SuiBase } from '@SuiBase/sdk';
+import { SuiStack0X } from '@SuiStack0X/sdk';
 
 // Initialize the SDK
-const stack = new SuiBase({
+const stack = new SuiStack0X({
   network: 'testnet',
   privateKey: process.env.SUI_PRIVATE_KEY
 });
@@ -596,7 +596,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Community
 
-- [Discord](https://discord.gg/SuiBase)
-- [Twitter](https://twitter.com/SuiBase)
-- [Forum](https://forum.sui.io/c/SuiBase)
-- [Blog](https://blog.SuiBase.io)
+- [Discord](https://discord.gg/SuiStack0X)
+- [Twitter](https://twitter.com/SuiStack0X)
+- [Forum](https://forum.sui.io/c/SuiStack0X)
+- [Blog](https://blog.SuiStack0X.io)
