@@ -262,7 +262,7 @@ Node operators can adjust their allocation based on hardware capabilities and ma
 
 ## Getting Started
 
-To get started with SuiStack0X, follow the instructions in the [Documentation](https://docs.suistack0x.io).
+To get started with SuiStack0X, follow the instructions in the [Documentation](https://suistack0X.xyz).
 
 ## Contributing
 
@@ -270,4 +270,4 @@ We welcome contributions to SuiStack0X! Please see our [Contributing Guide](CONT
 
 ## License
 
-SuiStack0X is open-source software licensed under the [Apache License 2.0](LICENSE).
+SuiStack0X is open-source software licensed under the [MIT License](LICENSE).
