@@ -2,26 +2,52 @@
 
 ## Overview
 
-The SuiStack0X TEE Framework is a comprehensive, platform-agnostic Trusted Execution Environment implementation designed to provide secure, privacy-preserving computing across multiple TEE platforms.
+The SuiStack0X TEE Framework is a comprehensive, production-ready, platform-agnostic Trusted Execution Environment implementation designed to provide secure, privacy-preserving computing across multiple TEE platforms.
 
 ## Features
 
-- 🔒 Multi-Platform Support
+- 🔒 **Multi-Platform Support**
   - Intel SGX
   - AMD SEV
   - ARM TrustZone
   - AWS Nitro Enclaves
 
-- 🛡️ Advanced Security Primitives
+- 🛡️ **Advanced Security Primitives**
   - Remote Attestation
   - Cryptographic Verification
   - Secure Computation
   - Zero-Knowledge Proofs
+  - Hardware-backed Key Management
 
-- 📊 Comprehensive Logging and Monitoring
-  - Configurable logging
-  - Log rotation
-  - Configuration management
+- 📊 **Comprehensive Security Management**
+  - Platform Security Ratings
+  - Privacy Analysis
+  - Comparative Security Assessment
+  - Use Case Recommendations
+
+- 🔍 **Hardware Detection**
+  - Automatic TEE Platform Detection
+  - CPU Feature Analysis
+  - Memory and Resource Assessment
+  - Capability Reporting
+
+- 💾 **Secure Storage**
+  - Hardware-backed Secure Storage
+  - File-based Encrypted Storage
+  - Memory-based Ephemeral Storage
+  - Platform-specific Optimizations
+
+- 🔧 **Production-Ready CLI**
+  - Comprehensive Command Set
+  - Hardware Analysis Tools
+  - Security Rating Tools
+  - Configuration Management
+
+- 🔄 **Sui Blockchain Integration**
+  - Move Contract TEE Execution
+  - On-chain Attestation Verification
+  - Privacy-Preserving Transaction Processing
+  - Blockchain-verifiable Computation
 
 ## Getting Started
 
@@ -45,80 +71,90 @@ cargo build
 cargo test
 ```
 
-### Configuration
+### Hardware Compatibility
+Before using SuiStack0X TEE, check your hardware compatibility:
 
-Create a configuration file `config.toml`:
+```bash
+# Check TEE platforms available on your system
+cargo run -- hardware detect
 
-```toml
-[logging]
-level = "Info"
-log_file = "/var/log/suistack0x-tee/tee.log"
-max_log_file_size = 10485760 # 10 MB
+# Get detailed hardware capabilities
+cargo run -- hardware capabilities
 
-[platforms.intel_sgx]
-enabled = true
+# Check compatibility with a specific platform
+cargo run -- hardware check intel_sgx
 
-[platforms.amd_sev]
-enabled = true
+### Security Assessment
+Evaluate the security of available TEE platforms:
 
-[security]
-min_attestation_validity = 3600
-max_attestation_validity = 86400
+# Get security rating for a platform
+cargo run -- rating rate intel_sgx
+
+# Compare security of two platforms
+cargo run -- rating compare intel_sgx arm_trustzone
+
+# Get platform recommendations for a use case
+cargo run -- rating recommend financial
 ```
 
-### Example Usage
+### Security Assessment
+Evaluate the security of available TEE platforms:
 
-```rust
-use suistack0x_tee::{
-    core::{
-        enclave::{Enclave, EnclaveBuilder},
-        attestation::Attestation,
-    },
-    utils::config::ConfigurationManager
-};
+```bash
+# Get security rating for a platform
+cargo run -- rating rate intel_sgx
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-    // Load configuration
-    let config = ConfigurationManager::default_config();
+# Compare security of two platforms
+cargo run -- rating compare intel_sgx arm_trustzone
 
-    // Create an enclave
-    let mut enclave = EnclaveBuilder::new()
-        .platform("intel_sgx".to_string())
-        .memory(1024)
-        .build()?;
-
-    // Initialize the enclave
-    enclave.initialize()?;
-
-    // Run a secure computation
-    let result = enclave.run_computation(|| {
-        // Your sensitive computation here
-        42
-    })?;
-
-    println!("Secure computation result: {}", result);
-
-    Ok(())
-}
+# Get platform recommendations for a use case
+cargo run -- rating recommend financial
 ```
 
-## Project Structure
+### Security Model
+The SuiStack0X TEE Framework provides a comprehensive security model that includes:
 
-- `src/`
-  - `core/` - Core TEE functionality
-  - `platforms/` - Platform-specific implementations
-  - `crypto/` - Cryptographic utilities
-  - `utils/` - Logging and configuration utilities
+### Attestation Security
 
-## Security Model
+Remote Attestation: Cryptographically verify platform and code integrity
+Attestation Chaining: Link multiple attestations for complex workflows
+Cross-Platform Verification: Validate attestations across different TEE technologies
 
-The SuiStack0X TEE Framework provides:
-- Verifiable Execution
-- Data Confidentiality
-- Execution Isolation
-- Remote Attestation
+### Execution Security
 
+Isolated Execution: Run code in protected memory environments
+Side-Channel Protection: Mitigate timing and cache-based attacks
+Memory Encryption: Keep sensitive data encrypted in memory
 
-## License
+### Data Security
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Hardware-Backed Storage: Utilize TEE-specific secure storage
+Encrypted Persistence: Securely store data with strong encryption
+Memory Protection: Prevent unauthorized memory access
+
+### Key Management
+
+Secure Key Generation: Create keys within the secure environment
+Key Derivation: Derive encryption keys from hardware-bound values
+Secure Key Storage: Store keys in hardware-protected storage
+
+### Sui Blockchain Integration
+SuiStack0X TEE Framework integrates with Sui Blockchain to provide:
+
+### Move Contract Execution
+
+Execute Move smart contracts within secure enclaves
+Provide cryptographic proof of execution
+Ensure privacy of contract data and state
+
+### On-Chain Attestation
+
+Register TEE attestations on-chain
+Create verifiable proofs of computation
+Enable decentralized verification of TEE execution
+
+### Privacy-Preserving Transactions
+
+Process sensitive transaction data in TEEs
+Generate zero-knowledge proofs for verification
+Maintain privacy while ensuring correctness
